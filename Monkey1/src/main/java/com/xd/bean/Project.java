@@ -4,13 +4,13 @@ package com.xd.bean;
  * @author 刘宇
  * @create 2019-10-21 18:03
  */
-public class Project {
+public class Project { //项目需求表
     private Integer projectId;
     private String  projectName;
-    private Double  projectBudget;
-    private String  projectIntroduce;
-    private String  projectFile;
-    private Integer projectPublisher;
+    private Double  projectBudget; //项目预算
+    private String  projectIntroduce; //项目介绍
+    private String  projectFile;  //项目文档(地址)
+    private Integer projectPublisher;//外键(user_id)
 
     public Project() {
     }

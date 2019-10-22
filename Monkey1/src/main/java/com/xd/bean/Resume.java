@@ -4,12 +4,12 @@ package com.xd.bean;
  * @author 刘宇
  * @create 2019-10-21 19:53
  */
-public class Resume {
+public class Resume { //个人履历表
     private Integer resumeId;
     private String  resumeWorkstatus;  //工作状态
     private String  resumeWorkdirection;// 职业方向
     private String  resumeSpecificwork; //具体工作
-    private Integer resumeSkill; //外键(skills_id)
+    private Integer resumeSkill; //外键(skill_id)
     private Integer resumeWorks;//外键(works_id)
     private String  resumeIntroduce;
     private Integer resumePerson;//外键(user_id)

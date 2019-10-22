@@ -6,15 +6,15 @@ import java.util.Date;
  * @author 刘宇
  * @create 2019-10-21 19:43
  */
-public class JobInformation {
+public class JobInformation { //工作信息表
     private Integer jobId;
-    private Date jobTime;
-    private Date jobUntime;
-    private String jobAddress;
-    private Integer jobHours;
-    private Double jobDaysal;
-    private String jobPattern;
-    private Integer jobPerson; //user_id
+    private Date jobTime; //工作日时间
+    private Date jobUntime; //非工作日时间
+    private String jobAddress; //工作地址
+    private Integer jobHours; //周工作时长
+    private Double jobDaysal; //日薪
+    private String jobPattern; //工作形式
+    private Integer jobPerson; //外键(user_id)
 
     public JobInformation() {
     }

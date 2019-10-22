@@ -7,15 +7,17 @@ package com.xd.bean;
 public class Users {
     private Integer userId;
     private String userName;
+    private String userImage;
     private String userEmail;
     private String userPassword;
 
     public Users() {
     }
 
-    public Users(Integer userId, String userName, String userEmail, String userPassword) {
+    public Users(Integer userId, String userName, String userImage, String userEmail, String userPassword) {
         this.userId = userId;
         this.userName = userName;
+        this.userImage = userImage;
         this.userEmail = userEmail;
         this.userPassword = userPassword;
     }
@@ -34,6 +36,14 @@ public class Users {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getUserImage() {
+        return userImage;
+    }
+
+    public void setUserImage(String userImage) {
+        this.userImage = userImage;
     }
 
     public String getUserEmail() {
@@ -57,6 +67,7 @@ public class Users {
         return "Users{" +
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
+                ", userImage='" + userImage + '\'' +
                 ", userEmail='" + userEmail + '\'' +
                 ", userPassword='" + userPassword + '\'' +
                 '}';
