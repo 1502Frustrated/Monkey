@@ -6,105 +6,105 @@ import java.util.Date;
  * @author 刘宇
  * @create 2019-10-21 19:43
  */
-public class JobInformation {
-    private Integer job_id;
-    private Date job_time;
-    private Date job_untime;
-    private String job_address;
-    private Integer job_hours;
-    private Double job_daysal;
-    private String job_pattern;
-    private Integer job_person; //user_id
+public class JobInformation { //工作信息表
+    private Integer jobId;
+    private Date jobTime; //工作日时间
+    private Date jobUntime; //非工作日时间
+    private String jobAddress; //工作地址
+    private Integer jobHours; //周工作时长
+    private Double jobDaysal; //日薪
+    private String jobPattern; //工作形式
+    private Integer jobPerson; //外键(user_id)
 
     public JobInformation() {
     }
 
-    public JobInformation(Integer job_id, Date job_time, Date job_untime, String job_address, Integer job_hours, Double job_daysal, String job_pattern, Integer job_person) {
-        this.job_id = job_id;
-        this.job_time = job_time;
-        this.job_untime = job_untime;
-        this.job_address = job_address;
-        this.job_hours = job_hours;
-        this.job_daysal = job_daysal;
-        this.job_pattern = job_pattern;
-        this.job_person = job_person;
+    public JobInformation(Integer jobId, Date jobTime, Date jobUntime, String jobAddress, Integer jobHours, Double jobDaysal, String jobPattern, Integer jobPerson) {
+        this.jobId = jobId;
+        this.jobTime = jobTime;
+        this.jobUntime = jobUntime;
+        this.jobAddress = jobAddress;
+        this.jobHours = jobHours;
+        this.jobDaysal = jobDaysal;
+        this.jobPattern = jobPattern;
+        this.jobPerson = jobPerson;
     }
 
-    public Integer getJob_id() {
-        return job_id;
+    public Integer getJobId() {
+        return jobId;
     }
 
-    public void setJob_id(Integer job_id) {
-        this.job_id = job_id;
+    public void setJobId(Integer jobId) {
+        this.jobId = jobId;
     }
 
-    public Date getJob_time() {
-        return job_time;
+    public Date getJobTime() {
+        return jobTime;
     }
 
-    public void setJob_time(Date job_time) {
-        this.job_time = job_time;
+    public void setJobTime(Date jobTime) {
+        this.jobTime = jobTime;
     }
 
-    public Date getJob_untime() {
-        return job_untime;
+    public Date getJobUntime() {
+        return jobUntime;
     }
 
-    public void setJob_untime(Date job_untime) {
-        this.job_untime = job_untime;
+    public void setJobUntime(Date jobUntime) {
+        this.jobUntime = jobUntime;
     }
 
-    public String getJob_address() {
-        return job_address;
+    public String getJobAddress() {
+        return jobAddress;
     }
 
-    public void setJob_address(String job_address) {
-        this.job_address = job_address;
+    public void setJobAddress(String jobAddress) {
+        this.jobAddress = jobAddress;
     }
 
-    public Integer getJob_hours() {
-        return job_hours;
+    public Integer getJobHours() {
+        return jobHours;
     }
 
-    public void setJob_hours(Integer job_hours) {
-        this.job_hours = job_hours;
+    public void setJobHours(Integer jobHours) {
+        this.jobHours = jobHours;
     }
 
-    public Double getJob_daysal() {
-        return job_daysal;
+    public Double getJobDaysal() {
+        return jobDaysal;
     }
 
-    public void setJob_daysal(Double job_daysal) {
-        this.job_daysal = job_daysal;
+    public void setJobDaysal(Double jobDaysal) {
+        this.jobDaysal = jobDaysal;
     }
 
-    public String getJob_pattern() {
-        return job_pattern;
+    public String getJobPattern() {
+        return jobPattern;
     }
 
-    public void setJob_pattern(String job_pattern) {
-        this.job_pattern = job_pattern;
+    public void setJobPattern(String jobPattern) {
+        this.jobPattern = jobPattern;
     }
 
-    public Integer getJob_person() {
-        return job_person;
+    public Integer getJobPerson() {
+        return jobPerson;
     }
 
-    public void setJob_person(Integer job_person) {
-        this.job_person = job_person;
+    public void setJobPerson(Integer jobPerson) {
+        this.jobPerson = jobPerson;
     }
 
     @Override
     public String toString() {
         return "JobInformation{" +
-                "job_id=" + job_id +
-                ", job_time=" + job_time +
-                ", job_untime=" + job_untime +
-                ", job_address='" + job_address + '\'' +
-                ", job_hours=" + job_hours +
-                ", job_daysal=" + job_daysal +
-                ", job_pattern='" + job_pattern + '\'' +
-                ", job_person=" + job_person +
+                "jobId=" + jobId +
+                ", jobTime=" + jobTime +
+                ", jobUntime=" + jobUntime +
+                ", jobAddress='" + jobAddress + '\'' +
+                ", jobHours=" + jobHours +
+                ", jobDaysal=" + jobDaysal +
+                ", jobPattern='" + jobPattern + '\'' +
+                ", jobPerson=" + jobPerson +
                 '}';
     }
 }

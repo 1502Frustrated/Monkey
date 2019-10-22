@@ -4,105 +4,105 @@ package com.xd.bean;
  * @author 刘宇
  * @create 2019-10-21 19:53
  */
-public class Resume {
-    private Integer resume_id;
-    private String  resume_workstatus;  //工作状态
-    private String  resume_workdirection;// 职业方向
-    private String  resume_specificwork; //具体工作
-    private Integer resume_skill; //外键(skills_id)
-    private Integer resume_works;//外键(works_id)
-    private String  resume_introduce;
-    private Integer resume_person;//外键(user_id)
+public class Resume { //个人履历表
+    private Integer resumeId;
+    private String  resumeWorkstatus;  //工作状态
+    private String  resumeWorkdirection;// 职业方向
+    private String  resumeSpecificwork; //具体工作
+    private Integer resumeSkill; //外键(skill_id)
+    private Integer resumeWorks;//外键(works_id)
+    private String  resumeIntroduce;
+    private Integer resumePerson;//外键(user_id)
 
     public Resume() {
     }
 
-    public Resume(Integer resume_id, String resume_workstatus, String resume_workdirection, String resume_specificwork, Integer resume_skill, Integer resume_works, String resume_introduce, Integer resume_person) {
-        this.resume_id = resume_id;
-        this.resume_workstatus = resume_workstatus;
-        this.resume_workdirection = resume_workdirection;
-        this.resume_specificwork = resume_specificwork;
-        this.resume_skill = resume_skill;
-        this.resume_works = resume_works;
-        this.resume_introduce = resume_introduce;
-        this.resume_person = resume_person;
+    public Resume(Integer resumeId, String resumeWorkstatus, String resumeWorkdirection, String resumeSpecificwork, Integer resumeSkill, Integer resumeWorks, String resumeIntroduce, Integer resumePerson) {
+        this.resumeId = resumeId;
+        this.resumeWorkstatus = resumeWorkstatus;
+        this.resumeWorkdirection = resumeWorkdirection;
+        this.resumeSpecificwork = resumeSpecificwork;
+        this.resumeSkill = resumeSkill;
+        this.resumeWorks = resumeWorks;
+        this.resumeIntroduce = resumeIntroduce;
+        this.resumePerson = resumePerson;
     }
 
-    public Integer getResume_id() {
-        return resume_id;
+    public Integer getResumeId() {
+        return resumeId;
     }
 
-    public void setResume_id(Integer resume_id) {
-        this.resume_id = resume_id;
+    public void setResumeId(Integer resumeId) {
+        this.resumeId = resumeId;
     }
 
-    public String getResume_workstatus() {
-        return resume_workstatus;
+    public String getResumeWorkstatus() {
+        return resumeWorkstatus;
     }
 
-    public void setResume_workstatus(String resume_workstatus) {
-        this.resume_workstatus = resume_workstatus;
+    public void setResumeWorkstatus(String resumeWorkstatus) {
+        this.resumeWorkstatus = resumeWorkstatus;
     }
 
-    public String getResume_workdirection() {
-        return resume_workdirection;
+    public String getResumeWorkdirection() {
+        return resumeWorkdirection;
     }
 
-    public void setResume_workdirection(String resume_workdirection) {
-        this.resume_workdirection = resume_workdirection;
+    public void setResumeWorkdirection(String resumeWorkdirection) {
+        this.resumeWorkdirection = resumeWorkdirection;
     }
 
-    public String getResume_specificwork() {
-        return resume_specificwork;
+    public String getResumeSpecificwork() {
+        return resumeSpecificwork;
     }
 
-    public void setResume_specificwork(String resume_specificwork) {
-        this.resume_specificwork = resume_specificwork;
+    public void setResumeSpecificwork(String resumeSpecificwork) {
+        this.resumeSpecificwork = resumeSpecificwork;
     }
 
-    public Integer getResume_skill() {
-        return resume_skill;
+    public Integer getResumeSkill() {
+        return resumeSkill;
     }
 
-    public void setResume_skill(Integer resume_skill) {
-        this.resume_skill = resume_skill;
+    public void setResumeSkill(Integer resumeSkill) {
+        this.resumeSkill = resumeSkill;
     }
 
-    public Integer getResume_works() {
-        return resume_works;
+    public Integer getResumeWorks() {
+        return resumeWorks;
     }
 
-    public void setResume_works(Integer resume_works) {
-        this.resume_works = resume_works;
+    public void setResumeWorks(Integer resumeWorks) {
+        this.resumeWorks = resumeWorks;
     }
 
-    public String getResume_introduce() {
-        return resume_introduce;
+    public String getResumeIntroduce() {
+        return resumeIntroduce;
     }
 
-    public void setResume_introduce(String resume_introduce) {
-        this.resume_introduce = resume_introduce;
+    public void setResumeIntroduce(String resumeIntroduce) {
+        this.resumeIntroduce = resumeIntroduce;
     }
 
-    public Integer getResume_person() {
-        return resume_person;
+    public Integer getResumePerson() {
+        return resumePerson;
     }
 
-    public void setResume_person(Integer resume_person) {
-        this.resume_person = resume_person;
+    public void setResumePerson(Integer resumePerson) {
+        this.resumePerson = resumePerson;
     }
 
     @Override
     public String toString() {
         return "Resume{" +
-                "resume_id=" + resume_id +
-                ", resume_workstatus='" + resume_workstatus + '\'' +
-                ", resume_workdirection='" + resume_workdirection + '\'' +
-                ", resume_specificwork='" + resume_specificwork + '\'' +
-                ", resume_skill=" + resume_skill +
-                ", resume_works=" + resume_works +
-                ", resume_introduce='" + resume_introduce + '\'' +
-                ", resume_person=" + resume_person +
+                "resumeId=" + resumeId +
+                ", resumeWorkstatus='" + resumeWorkstatus + '\'' +
+                ", resumeWorkdirection='" + resumeWorkdirection + '\'' +
+                ", resumeSpecificwork='" + resumeSpecificwork + '\'' +
+                ", resumeSkill=" + resumeSkill +
+                ", resumeWorks=" + resumeWorks +
+                ", resumeIntroduce='" + resumeIntroduce + '\'' +
+                ", resumePerson=" + resumePerson +
                 '}';
     }
 }
