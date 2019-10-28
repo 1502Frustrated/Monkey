@@ -8,7 +8,7 @@ public class Skills { //个人技能表
     private Integer skillId;
     private String  skillName;
     private Integer skillEvaluate; // 技能自评1~5
-    private Integer skillPerson;
+    private Integer skillPerson; //外键(user_id)
 
     public Skills() {
     }
