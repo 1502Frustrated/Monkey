@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xd.dao.UsersDao">
+    <!--配置属性名与字段名相互匹配-->
+    <resultMap id="usersResultMap" type="com.xd.bean.Users">
+
+        <id property="userId" column="user_id"></id>
+
+        <result property="userName" column="user_name"></result>
+        <result property="userEmail" column="user_email"></result>
+        <result property="userPassword" column="user_password"></result>
+        <result property="userImage" column="user_image"></result>
+
+    </resultMap>
+
+    <!--查找所有用户-->
+    <select id="findAll"  resultMap="usersResultMap">
+
+        select * from users
+    </select>
+
+    <!--通过id查找用户-->
+    <select id="findByUid"  resultMap="usersResultMap" parameterType="int">
+
+    select * from users where user_id=#{userId}
+
+    </select>
+
+    <delete id="deleteByUid" parameterType="int">
+
+        delete from users where user_id=#{userId}
+
+    </delete>
+
+    <insert id="addUser" parameterType="Users">
+
+        insert into users values(#{userId},#{userName},#{userEmail},#{userPassword},#{userImage})
+    </insert>
+
+    <update id="updateByUid" parameterType="Users">
+        update users set user_name=#{userName},user_email=#{userEmail},user_password=#{userPassword},user_image=#{userImage} where user_id=#{userId}
+    </update>
+
+
+</mapper>

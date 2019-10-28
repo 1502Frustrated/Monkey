@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CompilerConfiguration">
-    <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-<<<<<<< HEAD
-=======
-        <module name="Monkey1" />
->>>>>>> 21e8b78d0b2b553d05992e737474a5b91792f4a2
-      </profile>
-    </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Monkey1" target="1.8" />
-<<<<<<< HEAD
-=======
-      <module name="shiyishi" target="1.8" />
->>>>>>> 21e8b78d0b2b553d05992e737474a5b91792f4a2
-    </bytecodeTargetLevel>
-  </component>
+    <component name="CompilerConfiguration">
+        <annotationProcessing>
+            <profile name="Maven default annotation processors profile" enabled="true">
+                <sourceOutputDir name="target/generated-sources/annotations" />
+                <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+                <outputRelativeToContentRoot value="true" />
+                <module name="Monkey1" />
+            </profile>
+        </annotationProcessing>
+        <bytecodeTargetLevel>
+            <module name="Monkey1" target="1.8" />
+            <module name="shiyishi" target="1.8" />
+        </bytecodeTargetLevel>
+    </component>
 </project>
