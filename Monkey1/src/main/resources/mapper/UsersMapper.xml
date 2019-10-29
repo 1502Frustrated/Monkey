@@ -43,7 +43,7 @@
         update users set user_name=#{userName},user_email=#{userEmail},user_password=#{userPassword},user_image=#{userImage} where user_id=#{userId}
     </update>
 
-    <select id="findByEmail" parameterType="String">
+    <select id="findByEmail" parameterType="String" resultMap="usersResultMap">
 
         select * from users where user_email=#{userEmail}
     </select>

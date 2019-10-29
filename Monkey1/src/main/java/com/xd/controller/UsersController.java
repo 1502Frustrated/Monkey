@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -18,13 +20,16 @@ public class UsersController {
     @Autowired
     private UsersService us;
 
-    @RequestMapping("findAll")
-    public String findAll(Model model){
-        List<Users> usersList = us.findAll();
-
-        model.addAttribute("userList", usersList);
-
-        return "showUsers";
+    @RequestMapping("login")
+    @ResponseBody
+    public boolean findAll(@RequestParam("email") String email, @RequestParam("password") String password){
+        System.out.println(1);
+        Users users = us.findByEmail(email);
+        if(users.getUserPassword().equals(password)) {
+            return true;
+        }
+        else
+            return false;
     }
 
 

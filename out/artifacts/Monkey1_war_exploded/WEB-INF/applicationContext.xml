@@ -24,10 +24,10 @@
     <context:property-placeholder location="classpath:jdbc_config.properties"/>
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/monkey"></property>
-        <property name="user" value="root"></property>
-        <property name="password" value="446947897"></property>
+        <property name="driverClass" value="${driverClass}"></property>
+        <property name="jdbcUrl" value="${url}"></property>
+        <property name="user" value="${user}"></property>
+        <property name="password" value="${password}"></property>
         <property name="initialPoolSize" value="5"></property>
         <property name="minPoolSize" value="5"></property>
         <property name="acquireIncrement" value="5"/>
