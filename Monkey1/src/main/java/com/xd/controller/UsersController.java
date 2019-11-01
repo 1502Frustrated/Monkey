@@ -3,12 +3,19 @@ package com.xd.controller;
 import com.xd.bean.Users;
 import com.xd.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,6 +26,36 @@ import java.util.List;
 public class UsersController {
     @Autowired
     private UsersService us;
+    @Autowired
+    private JavaMailSenderImpl sender;
+    @RequestMapping("sendMail")
+    @ResponseBody
+    public  boolean  sendMail(){
+        //System.out.println(mf.getOriginalFilename());
+        try {
+            //创建邮件
+            MimeMessage message = sender.createMimeMessage();
+            //true 代表附件
+            MimeMessageHelper helper = null;
+
+            helper = new MimeMessageHelper(message,false);
+            helper.setFrom("791512107@qq.com");
+            helper.setTo("zhaochengjie_stan@163.com");
+            helper.setSubject("验证码");
+            helper.setText((int)((Math.random()*9+1)*100000)+"");
+            helper.setSentDate(new Date());
+            //添加附件
+            //helper.addAttachment(mf.getOriginalFilename(),mf);
+            //发送邮件
+            sender.send(message);
+
+            return true;
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+        return false;
+
+    }
 
     @RequestMapping("login")
     @ResponseBody
