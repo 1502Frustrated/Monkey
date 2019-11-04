@@ -15,6 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
 
@@ -30,7 +32,7 @@ public class UsersController {
     private JavaMailSenderImpl sender;
     @RequestMapping("sendMail")
     @ResponseBody
-    public  boolean  sendMail(){
+    public  boolean  sendMail(HttpServletRequest req){
         //System.out.println(mf.getOriginalFilename());
         try {
             //创建邮件
@@ -42,19 +44,30 @@ public class UsersController {
             helper.setFrom("791512107@qq.com");
             helper.setTo("zhaochengjie_stan@163.com");
             helper.setSubject("验证码");
+            String i=(int)((Math.random()*9+1)*100000)+"";
             helper.setText((int)((Math.random()*9+1)*100000)+"");
             helper.setSentDate(new Date());
             //添加附件
             //helper.addAttachment(mf.getOriginalFilename(),mf);
             //发送邮件
             sender.send(message);
-
+            HttpSession session=req.getSession();
+            session.setAttribute("y",i);
             return true;
         } catch (MessagingException e) {
             e.printStackTrace();
         }
         return false;
 
+    }
+    @RequestMapping("duibi")
+    @ResponseBody
+    public boolean duibi(Users users){
+        Users user = us.findByEmail(users.getUserEmail());
+        if (user!=null){
+            return false;//邮箱已被注册
+        }
+        return true;
     }
 
     @RequestMapping("login")
@@ -69,7 +82,28 @@ public class UsersController {
             return false;
     }
 
+    @RequestMapping("zhuce")
+    public String addUser(Users users,String yan,HttpServletRequest req){
+        HttpSession session = req.getSession();
+        String y = session.getAttribute("y")+"";
+        System.out.println(y);
+        System.out.println(yan);
+        if (y.equals(yan)){
+            Users usersx = us.findByEmail(users.getUserEmail());
+            if(usersx==null) {
+                us.addUser(users);
+                System.out.println(1);
+                return "shouye";//返回登录页面
+            }else{
+                System.out.println(2);
+                return "zhuce";//返回注册页面（邮箱被注册）
+            }
+        }else{
+            System.out.println(3);
+            return "zhuce";//验证码错误返回
+        }
 
+    }
 
 
     @RequestMapping("delete")
@@ -101,10 +135,10 @@ public class UsersController {
         return "error";
     }
 
-    @RequestMapping("addUsers")
+    /*@RequestMapping("addUsers")
     public String addUsers(){
         return "addUsers";
-    }
+    }*/
 
 
     @RequestMapping("addUsers1")

@@ -10,7 +10,6 @@ import java.util.List;
  * @author 赵成杰
  * @create 2019-10-22 15:18
  */
-@Service
 public interface UsersService {
 
     List<Users> findAll();  //查询所有用户

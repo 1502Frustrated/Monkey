@@ -149,13 +149,16 @@
         color: black;
         text-indent: 13px;
         border-radius: 8px;
+        overflow: hidden;
     }
-    .yanzheng{
-        width: 70px;
-        line-height: 16px;
-        margin-left: 265px;
-        margin-top: -27px;
+    #yanzheng {
+        width: 83px;
+        height: 24px;
+        margin-left: 127px;
+        margin-top: -7px;
         color: rgb(34 152 250);
+        background-color: white;
+        border: none;
     }
     #dibu{
         width: 320px;
@@ -252,24 +255,28 @@
     <div class="mian">
         <div class="xiao">
             <div class="first">注册新账号</div>
-            <div class="ming">用户名</div>
-            <div class="denglu1">
-                <input type="text" class="kuang1" placeholder="请输入用户名">
-            </div>
-            <div class="ming">密码</div>
-            <div class="denglu1">
-                <input type="password" class="kuang1" placeholder="请输入密码">
-            </div>
-            <div class="ming">邮箱</div>
-            <div class="denglu1">
-                <input type="text" class="kuang1" placeholder="请输入邮箱">
-            </div>
-            <div class="ming">验证码</div>
-            <div class="denglu1">
-                <input type="text" class="kuang1" placeholder="请输入验证码">
-                <div class="yanzheng">获取验证码</div>
-            </div>
-            <input type="submit" value="注册" id="dibu">
+            <form method="post" action="/zhuce">
+                <div class="ming">用户名</div>
+                <div class="denglu1">
+                    <input type="text" class="kuang1" placeholder="请输入用户名">
+                </div>
+                <div class="ming">密码</div>
+                <div class="denglu1">
+                    <input type="password" class="kuang1" placeholder="请输入密码">
+                </div>
+                <div class="ming">邮箱</div>
+                <div class="denglu1">
+                    <input type="text" class="kuang1" placeholder="请输入邮箱">
+                </div>
+                <div class="ming">验证码</div>
+                <div class="denglu1">
+                    <input type="text" class="kuang1" name="yan" placeholder="请输入验证码">
+                    <%--<form method="post" action="sendMail" enctype="multipart/form-data" id="yanzheng">--%>
+                    <input type="button" value="发送验证码" id="yanzheng">
+
+                </div>
+                <input type="submit" value="注册" id="dibu">
+            </form>
             <div class="tubiao"></div>
             <div class="tubiao tubiao1"></div>
             <div class="tubiao tubiao2"></div>
@@ -290,6 +297,30 @@
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    </html>
-    </body>
+    $("#yanzheng").click(function() {
+        // var data = $("#fm").serialize();
+        //表单序列化
+        // alert(data);
+
+        $.ajax({
+            type: "get",
+            url: "../sendMail",
+            //data: data,
+            async: true, //异步请求
+            //contentType //前台到后台的数据格式
+            //dataType//后台到前台的数据格式
+            success: function(data) {
+                if (data == true) {
+                    alert("验证码已发送！");
+                } else {
+                    alert("验证码发送失败！");
+                }
+            },
+            error: function() {
+                alert("验证码发送失败！");
+            }
+        });
+
+    });
+</script>
 </html>

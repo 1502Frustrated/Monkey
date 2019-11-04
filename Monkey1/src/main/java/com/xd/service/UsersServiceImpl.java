@@ -13,7 +13,6 @@ import java.util.List;
  * @create 2019-10-22 15:19
  */
 @Service
-@Transactional
 public class UsersServiceImpl implements UsersService{
 
     @Autowired
